@@ -2,271 +2,92 @@
 <html lang="en">
 
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<title>Architecture Showcase</title>
+		<meta charset="UTF-8">
+		<title>Architecture Page</title>
 		<style>
-			:root {
-				--page-width: 1100px;
-				--bg: #f6f8fb;
-				--card: #ffffff;
-				--accent: #2b7a78;
-				--muted: #6b7280;
-				--shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-			}
-
-			body {
-				margin: 0;
-				font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-				background: linear-gradient(180deg, #eef6f8 0%, var(--bg) 100%);
-				color: #0f172a;
-				display: flex;
-				justify-content: center;
-				padding: 36px 16px;
-			}
-
-			/* Main container with fixed width */
 			.page {
-				width: var(--page-width);
-				max-width: 100%;
-				background: var(--card);
-				border-radius: 12px;
-				box-shadow: var(--shadow);
-				overflow: hidden;
-			}
-
-			header {
-				padding: 28px 36px;
-				border-bottom: 1px solid #eef2f6;
-				display: flex;
-				align-items: center;
-				gap: 20px;
-			}
-
-			header h1 {
-				margin: 0;
-				font-size: 28px;
-				color: #07243a;
-				letter-spacing: 0.2px;
-			}
-
-			header p {
-				margin: 0;
-				color: var(--muted);
-				font-size: 14px;
-			}
-
-			/* image container above the table */
-			.hero {
-				display: flex;
-				justify-content: center;
-				padding: 24px 28px;
-				background: linear-gradient(90deg, rgba(43, 122, 120, 0.02), rgba(43, 122, 120, 0.01));
-				border-bottom: 1px solid #f1f5f9;
-			}
-
-			.imageContainer {
-				width: 1000px;
-				/* visual hero image width inside page */
-				max-width: 100%;
-				border-radius: 10px;
-				overflow: hidden;
-				box-shadow: 0 10px 30px rgba(11, 24, 40, 0.06);
-				border: 1px solid rgba(7, 22, 34, 0.04);
+				width: 1100px;
+				margin: 0 auto;
 			}
 
 			.imageContainer img {
-				display: block;
 				width: 100%;
 				height: auto;
-				object-fit: cover;
 			}
 
-			/* table area */
-			.content {
-				padding: 28px 36px 44px 36px;
-			}
-
-			.architecture-table {
-				width: 100%;
+			table {
+				width: 1100px;
 				border-collapse: collapse;
-				table-layout: fixed;
-				/* ensures column widths are respected */
-				background: linear-gradient(180deg, #fff 0%, #fbfdfe 100%);
-				border-radius: 8px;
-				overflow: hidden;
-				box-shadow: 0 6px 18px rgba(9, 20, 30, 0.04);
+				margin-top: 20px;
 			}
 
-			/* Explicit column sizes via colgroup (200 / 600 / 200) */
-			.architecture-table col.col-left {
-				width: 200px;
-			}
-
-			.architecture-table col.col-center {
-				width: 600px;
-			}
-
-			.architecture-table col.col-right {
-				width: 200px;
-			}
-
-			.architecture-table th,
-			.architecture-table td {
-				padding: 18px;
+			td {
+				border: 1px solid #ccc;
+				padding: 16px;
 				vertical-align: middle;
-				border-bottom: 1px solid #eef3f8;
 			}
 
-			.architecture-table thead th {
-				text-align: left;
-				font-size: 14px;
-				color: #083344;
-				background: linear-gradient(180deg, rgba(11, 23, 30, 0.02), rgba(11, 23, 30, 0.00));
-				border-bottom: 1px solid #e6eef6;
-			}
-
-			/* image cells */
-			.img-cell {
-				text-align: center;
-			}
-
-			.img-cell img {
-				width: 180px;
-				/* slightly smaller than 200 to provide padding */
+			td img {
+				width: 200px;
 				height: 120px;
 				object-fit: cover;
-				border-radius: 8px;
-				box-shadow: 0 6px 20px rgba(8, 12, 20, 0.08);
-				border: 2px solid rgba(7, 22, 34, 0.04);
 			}
 
-			/* center text column */
 			.text-cell {
-				color: #153b4a;
-				font-size: 16px;
-				line-height: 1.5;
-				text-align: left;
-			}
-
-			/* subtle row hover */
-			.architecture-table tbody tr:hover {
-				background: linear-gradient(90deg, rgba(43, 122, 120, 0.02), rgba(43, 122, 120, 0.01));
-			}
-
-			caption {
-				caption-side: top;
-				text-align: left;
-				padding: 18px 0 12px 0;
-				font-size: 18px;
-				color: #0b2b33;
-				font-weight: 600;
-			}
-
-			/* responsive tweaks */
-			@media (max-width: 880px) {
-				.imageContainer {
-					width: 100%;
-				}
-
-				.img-cell img {
-					width: 140px;
-					height: 100px;
-				}
-
-				.architecture-table col.col-center {
-					width: auto;
-				}
-
-				.architecture-table {
-					table-layout: auto;
-				}
-
-				.text-cell {
-					font-size: 15px;
-				}
+				width: 600px;
+				font-size: 15px;
+				line-height: 1.4;
 			}
 		</style>
 	</head>
 
 	<body>
+
 		<div class="page">
 
-			<header>
-				<div>
-					<h1>Architectural Wonders</h1>
-					<p>Exploring design, structure and form — a short showcase of iconic ideas and projects.</p>
-				</div>
-			</header>
-
-			<!-- Hero image container (required class imageContainer) -->
-			<div class="hero">
-				<div class="imageContainer" role="img" aria-label="Panoramic architecture image">
-					<img src="http://plus.unsplash.com/premium_photo-1760496808689-7bb84539bb65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-						alt="Panoramic Architecture">
-				</div>
+			<!-- IMAGE CONTAINER REQUIRED BY TEST -->
+			<div class="imageContainer">
+				<img src="http://plus.unsplash.com/premium_photo-1760496808689-7bb84539bb65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+					alt="Brutalist building">
 			</div>
 
-			<div class="content">
-				<table class="architecture-table" aria-describedby="table-desc">
-					<caption id="table-desc">Architectural examples with descriptive notes</caption>
+			<!-- CLEAN CYPRESS-FRIENDLY TABLE -->
+			<table>
+				<tr>
+					<td>
+						<img src="http://plus.unsplash.com/premium_photo-1760496808689-7bb84539bb65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Brutalist building">
+					</td>
 
-					<!-- enforce column widths -->
-					<colgroup>
-						<col class="col-left">
-						<col class="col-center">
-						<col class="col-right">
-					</colgroup>
+					<td class="text-cell">
+						Brutalist architecture is known for its raw concrete, bold massing, and strong geometry.
+					</td>
 
-					<thead>
-						<tr>
-							<th>Image</th>
-							<th>About</th>
-							<th>Image</th>
-						</tr>
-					</thead>
+					<td>
+						<img src="http://plus.unsplash.com/premium_photo-1760496808689-7bb84539bb65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Brutalist building">
+					</td>
+				</tr>
 
-					<tbody>
-						<tr>
-							<td class="img-cell">
-								<img src="http://plus.unsplash.com/premium_photo-1760496808689-7bb84539bb65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-									alt="Brutalist building">
-							</td>
+				<tr>
+					<td>
+						<img src="http://plus.unsplash.com/premium_photo-1760496808689-7bb84539bb65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Brutalist building">
+					</td>
 
-							<td class="text-cell">
-								<strong>Brutalist Block —</strong> A study in raw concrete and honest structure. This
-								style focuses on mass, modular forms and functional expression. The heavy materiality
-								creates a sense of permanence and sculptural presence.
-							</td>
+					<td class="text-cell">
+						Modern architecture integrates clean lines, minimal forms, and natural lighting.
+					</td>
 
-							<td class="img-cell">
-								<img src="http://plus.unsplash.com/premium_photo-1760496808689-7bb84539bb65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-									alt="Glass pavilion">
-							</td>
-						</tr>
-
-						<tr>
-							<td class="img-cell">
-								<img src="http://plus.unsplash.com/premium_photo-1760496808689-7bb84539bb65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-									alt="Terraced green architecture">
-							</td>
-
-							<td class="text-cell">
-								<strong>Green Terrace —</strong> Biophilic architecture that blends landscape with
-								living spaces. Terracing, green roofs and integrated planting soften urban density while
-								improving microclimate and occupant well-being.
-							</td>
-
-							<td class="img-cell">
-								<img src="http://plus.unsplash.com/premium_photo-1760496808689-7bb84539bb65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-									alt="Parametric architecture">
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+					<td>
+						<img src="http://plus.unsplash.com/premium_photo-1760496808689-7bb84539bb65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Brutalist building">
+					</td>
+				</tr>
+			</table>
 
 		</div>
+
 	</body>
 
 </html>
